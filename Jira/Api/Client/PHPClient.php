@@ -67,7 +67,7 @@ class Jira_Api_Client_PHPClient implements Jira_Api_Client_ClientInterface
           $header[] = "Authorization: Basic " . $credential->getCredential();
         }
         $header[] = "Content-Type: application/json";
-
+				$header[] = "User-Agent: Jira API REST Client";
         $context = array(
             "http" => array(
                 "method"  => $method,

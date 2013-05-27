@@ -67,7 +67,7 @@ class Jira_Api_Client_CurlClient implements Jira_Api_Client_ClientInterface
         if ($isFile) {
         	curl_setopt($curl, CURLOPT_HTTPHEADER, array ('X-Atlassian-Token: nocheck'));
         } else {
-        	curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-Type: application/json;charset=UTF-8"));
+        	curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-Type: application/json;charset=UTF-8", 'User-Agent: Jira API REST Client'));
         }
         if ($method == "POST") {
             curl_setopt($curl, CURLOPT_POST, 1);
